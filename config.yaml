@@ -1,0 +1,61 @@
+tables:
+  list_tables: ['offices','customers','employees','orderdetails','orders','payments','product_lines','products']
+  list_columns:
+    offices: ['office_code','city','phone','address_line1','address_line2','state','country','postal_code','territory']
+
+    customers: ['customers_numer',
+                'customers_name',
+                'contact_last_name',
+                'contact_first_name',
+                'phone',
+                'address_line1',
+                'address_line2',
+                'city',
+                'state',
+                'postal_code',
+                'country',
+                'sales_rep_employee_number',
+                'credit_limit']
+
+    employees: ['employee_number',
+                'last_name',
+                'first_name',
+                'extension',
+                'email',
+                'office_code',
+                'reports_to',
+                'job_Title']
+
+    orderdetails: ['order_number',
+                   'product_code',
+                   'quantity_ordered',
+                   'price_each',
+                   'order_line_number']
+
+    orders: ['order_number',
+            'order_date',
+            'required_date',
+            'shipped_date',
+            'status',
+            'comments',
+            'customer_number']
+
+    payments: ['customer_number',
+               'check_number',
+               'payment_date',
+               'amount']
+
+    product_lines: ['product_line',
+                    'text_description',
+                    'html_description',
+                    'image']
+
+    products: ['product_code',
+               'product_name',
+               'product_line',
+               'product_scale',
+               'product_vendor',
+               'product_description',
+               'quantity_in_stock',
+               'buy_price',
+               'msrp']
