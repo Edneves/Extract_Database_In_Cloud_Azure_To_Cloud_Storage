@@ -14,5 +14,5 @@ A estrutura do projeto foi desenvolvida utilizando o paradigma de Orientação �
 
 Tools used:
 1. Python
-2. PostgreSQl (In Azure)
+2. PostgreSQL (In Azure)
 3. Cloud Storage
