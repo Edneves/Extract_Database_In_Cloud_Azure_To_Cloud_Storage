@@ -11,3 +11,8 @@ A estrutura do projeto foi desenvolvida utilizando o paradigma de Orientação �
 -  "execution", contém o método "execution", onde foi instanciado o objeto da classe, leitura do yaml e chamada dos respectivos métodos.
 -  "sql", contém a consulta sql genérica utilizada para a extração dos dados.
 -  "config.yaml", contém a lista das tabelas, como também as colunas das respectivas tabelas. 
+
+Tools used:
+1. Python
+2. PostgreSQl (In Azure)
+3. Cloud Storage
