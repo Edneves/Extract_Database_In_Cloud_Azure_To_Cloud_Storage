@@ -1,13 +1,13 @@
 import jaydebeapi
-class connect_postgres:
-    def __init__(self, db, user, pwd, host, port, path_jar):
-        self._db: str = db
-        self._user: str = user
-        self._pwd: str = pwd
-        self._host: str = host
-        self._port: int = port
-        self._path_jar: str = path_jar
-    def connection_db(self) -> str:
+class Connect_postgres(object):
+    def __init__(self):
+        self._db: str = None
+        self._user: str = None
+        self._pwd: str = None
+        self._host: str = None
+        self._port: int = None
+        self._path_jar: str = None
+    def __connection_db(self):
         # CONNECTION IN DATABASE
         try:
             connection = jaydebeapi.connect(
@@ -20,3 +20,17 @@ class connect_postgres:
             return connection
         except Exception as e:
             print("ERROR IN CONNECTION DATABASE", e)
+
+    def set_connect(self, db, user, pwd, host, port, path):
+        self._db = db
+        self._user = user
+        self._pwd = pwd
+        self._host = host
+        self._port = port
+        self._path_jar = path
+        conn = self.__connection_db()
+        return conn
+
+    def close_connection(self, conn):
+        conn.close()
+        print("CLOSE CONNECTION!!")

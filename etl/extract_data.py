@@ -1,11 +1,11 @@
-from connection import connect_database
+from connection.connect_database import Connect_postgres
 from google.cloud import storage
 import pandas as pd
 from pandas import DataFrame
 
-class extract_data(connect_database.connect_postgres):
-    def __init__(self, db, user, pwd, host, port, path_jar, file_sql, table, columns, name_bucket, name_blob, credentials):
-        super().__init__(db, user, pwd, host, port, path_jar)
+class extract_data(Connect_postgres):
+    def __init__(self, file_sql, table, columns, name_bucket, name_blob, credentials):
+        super().__init__()
         self._file_sql: str = file_sql
         self._table: str = table
         self._columns: list = columns

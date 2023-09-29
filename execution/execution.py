@@ -30,24 +30,13 @@ def execution(db,user,pwd,host,port,path_jar,name_bucket,file_sql,credentials):
             # I GO THROUGH THE LIST AND GET THE COLLUMNS
             columns = param['tables']['list_columns'][table]
             name_blob = f"input/{table}/{table}"
-            object = extract_data(db,
-                                  user,
-                                  pwd,
-                                  host,
-                                  port,
-                                  path_jar,
-                                  file_sql,
-                                  table,
-                                  columns,
-                                  name_bucket,
-                                  name_blob,
-                                  credentials)
-
-            connection = object.connection_db()
+            object = extract_data(file_sql, table, columns, name_bucket, name_blob, credentials)
+            connection = object.set_connect(db, user, pwd, host, port, path_jar)
             file = object.read_file_sql()
             result_query = object.execute_query(connection, file)
             dataframe = object.generate_dataframe(result_query)
             object.load_data_storage(dataframe)
+        object.close_connection(connection)
 def main(db,user,pwd,host,port,path_jar,name_bucket,file_sql,credentials):
     execution(db,user,pwd,host,port,path_jar,name_bucket,file_sql,credentials)
 
