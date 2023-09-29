@@ -36,7 +36,8 @@ def execution(db,user,pwd,host,port,path_jar,name_bucket,file_sql,credentials):
             result_query = object.execute_query(connection, file)
             dataframe = object.generate_dataframe(result_query)
             object.load_data_storage(dataframe)
-			object.close_connection(connection)
+            object.close_connection(connection)
+
 def main(db,user,pwd,host,port,path_jar,name_bucket,file_sql,credentials):
     execution(db,user,pwd,host,port,path_jar,name_bucket,file_sql,credentials)
 
